@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>霓虹贪吃蛇</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hud">
+      <p class="eyebrow">Classic Mini Game</p>
+      <div class="scoreboard">
+        <div>
+          <span class="label">得分</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span class="label">最高</span>
+          <strong id="best">0</strong>
+        </div>
+      </div>
+      <h1>霓虹贪吃蛇</h1>
+      <p class="summary" id="message">方向键或 WASD 开始移动，吃到光点加分，撞墙或撞到自己则结束。</p>
+    </section>
+
+    <section class="board-wrap">
+      <canvas id="board" width="360" height="360" aria-label="Snake game board"></canvas>
+      <div class="overlay" id="overlay">
+        <p class="overlay-kicker">按空格开始</p>
+        <p class="overlay-text">首版只保留核心循环：移动、吃食物、死亡重开。</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="restart-btn" type="button">重新开始</button>
+      <p class="hint">`Space` 重开 · 速度会随分数提升</p>
+    </section>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
