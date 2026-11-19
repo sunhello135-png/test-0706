@@ -1,0 +1,11 @@
+name: Tutti CI event test
+on:
+  push:
+    branches:
+      - test/github-branch-push-event
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node --check renderer.js
