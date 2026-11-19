@@ -121,7 +121,7 @@ function transitionState() {
     pomodoroCount++;
     updatePomodoroDots();
 
-    if (pomodoroCount % 4 === 0) {
+    if (pomodoroCount === 4) {
       state = STATES.LONG_BREAK;
       currentTime = LONG_BREAK;
     } else {
@@ -129,6 +129,10 @@ function transitionState() {
       currentTime = SHORT_BREAK;
     }
   } else {
+    if (state === STATES.LONG_BREAK) {
+      pomodoroCount = 0;
+      updatePomodoroDots();
+    }
     state = STATES.WORK;
     currentTime = WORK_TIME;
   }
